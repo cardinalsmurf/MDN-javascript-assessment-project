@@ -28,8 +28,12 @@ function result() {
   while (newStory.indexOf(':insert' !== -1)) {
     console.log('DEBUG: replacing story items...');
     newStory = newStory.replace(':insertx:', xItem);
+    console.log('DEBUG: replaced x');
     newStory = newStory.replace(':inserty:', yItem);
+    console.log('DEBUG: replaced y');
     newStory = newStory.replace(':insertz:', zItem);
+    console.log('DEBUG: replaced z');
+    console.log('DEBUG: index of next :insert : ' + newStory.indexOf(':insert'));
   }
   
   if(customName.value != '') {
