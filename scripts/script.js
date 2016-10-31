@@ -26,6 +26,7 @@ function result() {
   var zItem = randomValueFromArray(insertZ);
   
   while (newStory.indexOf(':insert' !== -1)) {
+    console.log('DEBUG: replacing story items...');
     newStory = newStory.replace(':insertx:', xItem);
     newStory = newStory.replace(':inserty:', yItem);
     newStory = newStory.replace(':insertz:', zItem);
@@ -41,6 +42,7 @@ function result() {
     var temperature =  Math.round((94 -32) * (5 / 9)) + ' centigrade';
     
     while ((newStory.indexOf('94 fahrenheit') !== -1) && (newStory.indexOf('300 pounds') !== -1)) {
+      console.log('Converting to UK...');
       newStory = newStory.replace('94 fahrenheit', temperature);
       newStory = newStory.replace('300 pounds', weight);
     }
