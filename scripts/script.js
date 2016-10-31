@@ -25,15 +25,20 @@ function result() {
   var yItem = randomValueFromArray(insertY);
   var zItem = randomValueFromArray(insertZ);
   
-  while (newStory.indexOf(':insert' !== -1)) {
-    console.log('DEBUG: replacing story items...');
+  var looping = true;
+  
+  while (looping) {
+    // console.log('DEBUG: replacing story items...');
     newStory = newStory.replace(':insertx:', xItem);
-    console.log('DEBUG: replaced x');
+    // console.log('DEBUG: replaced x');
     newStory = newStory.replace(':inserty:', yItem);
-    console.log('DEBUG: replaced y');
+    // console.log('DEBUG: replaced y');
     newStory = newStory.replace(':insertz:', zItem);
-    console.log('DEBUG: replaced z');
+    // console.log('DEBUG: replaced z');
     console.log('DEBUG: index of next :insert : ' + newStory.indexOf(':insert'));
+    if (newStory.indexOf(':insert') !== -1) {
+      looping = false;
+    }
   }
   
   if(customName.value != '') {
