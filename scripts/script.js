@@ -50,9 +50,9 @@ function result() {
     var weight = Math.round(300 * 0.0714285714) + ' stone';
     var temperature =  Math.round((94 -32) * (5 / 9)) + ' centigrade';
     
-    while ((newStory.indexOf('94 fahrenheit') !== -1) && (newStory.indexOf('300 pounds') !== -1)) {
+    while ((newStory.indexOf('94 farenheit') !== -1) && (newStory.indexOf('300 pounds') !== -1)) {
       console.log('Converting to UK...');
-      newStory = newStory.replace('94 fahrenheit', temperature);
+      newStory = newStory.replace('94 farenheit', temperature);
       newStory = newStory.replace('300 pounds', weight);
     }
     
