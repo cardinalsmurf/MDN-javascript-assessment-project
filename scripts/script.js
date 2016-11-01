@@ -25,10 +25,11 @@ function result() {
   var yItem = randomValueFromArray(insertY);
   var zItem = randomValueFromArray(insertZ);
   
-  var looping = true;
+  //var looping = true;
+  var counter = 0;
   
-  while (looping) {
-    // console.log('DEBUG: replacing story items...');
+  while ((newStory.indexOf(':insert') !== -1) && (counter < 3)) {
+    console.log('DEBUG: replacing story items...');
     newStory = newStory.replace(':insertx:', xItem);
     // console.log('DEBUG: replaced x');
     newStory = newStory.replace(':inserty:', yItem);
@@ -36,9 +37,8 @@ function result() {
     newStory = newStory.replace(':insertz:', zItem);
     // console.log('DEBUG: replaced z');
     console.log('DEBUG: index of next :insert : ' + newStory.indexOf(':insert'));
-    if (newStory.indexOf(':insert') !== -1) {
-      looping = false;
-    }
+    console.log('DEBUG: ' + newStory);
+    counter++;
   }
   
   if(customName.value != '') {
